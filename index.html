@@ -1,296 +1,155 @@
-<body>
-  <h1 style="font-family: -apple-system; color: white;">TEST</h1>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!doctype html>
+<html lang="es">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.2">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claudio Valero</title>
+
+  <meta name="description" content="Claudio Valero · Coordinador Editorial · Tecnología">
+  <meta name="robots" content="index,follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Claudio Valero">
+  <meta property="og:description" content="Coordinador Editorial · Tecnología">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://claudiovalero.com">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Claudio Valero">
+  <meta name="twitter:description" content="Coordinador Editorial · Tecnología">
+
+  <link rel="icon" href="/favicon.ico">
+
+  <style>
+    :root{
+      --bg1:#0b0f19;
+      --bg2:#05070c;
+      --card:rgba(255,255,255,.08);
+      --stroke:rgba(255,255,255,.14);
+      --text:rgba(255,255,255,.95);
+      --muted:rgba(255,255,255,.65);
+      --shadow:0 20px 60px rgba(0,0,0,.45);
+      --radius:28px;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display",system-ui,sans-serif;
+      background:
+        radial-gradient(900px 600px at 20% 10%, rgba(120,180,255,.18), transparent 55%),
+        radial-gradient(700px 500px at 85% 25%, rgba(170,120,255,.16), transparent 60%),
+        linear-gradient(180deg,var(--bg1),var(--bg2));
+      color:var(--text);
+      padding:20px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--stroke);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+      padding:36px 28px;
+      width:100%;
+      max-width:380px;
+      text-align:center;
+    }
+
+    .avatar{
+      width:120px;
+      height:120px;
+      margin:0 auto 18px;
+      border-radius:36px;
+      overflow:hidden;
+      border:1px solid var(--stroke);
+    }
+
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    h1{
+      margin:0;
+      font-size:30px;
+      letter-spacing:-0.03em;
+    }
+
+    .role{
+      margin-top:6px;
+      font-size:15px;
+      color:var(--muted);
+    }
+
+    .links{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px;
+      border-radius:16px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      text-decoration:none;
+      font-size:14px;
+      transition:.15s ease;
+    }
+
+    .btn:hover{
+      background:rgba(255,255,255,.12);
+      transform:translateY(-1px);
+    }
+
+    footer{
+      margin-top:18px;
+      font-size:12px;
+      color:var(--muted);
+    }
   </style>
 </head>
+
 <body>
-<p class="p1">&lt;!doctype html&gt;</p>
-<p class="p1">&lt;html lang="es"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Claudio Valero&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="Claudio Valero · Coordinador Editorial · Enlaces" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Open Graph / Social --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta property="og:title" content="Claudio Valero" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta property="og:description" content="Coordinador Editorial · Tecnología" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta property="og:type" content="website" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Cambia por tu dominio real cuando lo tengas --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- &lt;meta property="og:url" content="https://claudiovalero.com" /&gt; --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Crea un og.jpg (1200x630) --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- &lt;meta property="og:image" content="https://claudiovalero.com/og.jpg" /&gt; --&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Twitter Card --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="twitter:card" content="summary_large_image" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="twitter:title" content="Claudio Valero" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="twitter:description" content="Coordinador Editorial · Tecnología" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- &lt;meta name="twitter:image" content="https://claudiovalero.com/og.jpg" /&gt; --&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Favicons (pon estos archivos en la raíz) --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="icon" href="favicon.ico" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="apple-touch-icon" href="apple-touch-icon.png" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="manifest" href="site.webmanifest" /&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--bg1:#0b0f19;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--bg2:#05070c;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--card: rgba(255,255,255,.08);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--stroke: rgba(255,255,255,.14);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--text: rgba(255,255,255,.92);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--muted: rgba(255,255,255,.62);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--shadow: 0 22px 70px rgba(0,0,0,.48);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--radius: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--btn: rgba(255,255,255,.08);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--btnHover: rgba(255,255,255,.12);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--focus: rgba(120,180,255,.55);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (prefers-color-scheme: light){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>:root{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--bg1:#f5f6fa;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--bg2:#ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--card: rgba(255,255,255,.78);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--stroke: rgba(0,0,0,.08);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--text: rgba(10,10,12,.92);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--muted: rgba(10,10,12,.55);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--shadow: 0 18px 55px rgba(0,0,0,.12);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--btn: rgba(10,10,12,.04);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--btnHover: rgba(10,10,12,.06);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--focus: rgba(0,120,255,.25);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>*{ box-sizing:border-box; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>html, body{ height:100%; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>body{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin:0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 22px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display","SF Pro Text", system-ui, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background:</p>
-<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(900px 600px at 18% 12%, rgba(120,180,255,.18), transparent 55%),</p>
-<p class="p1"><span class="Apple-converted-space">        </span>radial-gradient(700px 500px at 85% 25%, rgba(170,120,255,.16), transparent 60%),</p>
-<p class="p1"><span class="Apple-converted-space">        </span>linear-gradient(180deg, var(--bg1), var(--bg2));</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow-x:hidden;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.shell{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width:100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 420px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>position:relative;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.card{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--card);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--stroke);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: var(--radius);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: var(--shadow);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>backdrop-filter: blur(18px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>-webkit-backdrop-filter: blur(18px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 36px 28px 26px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: translateY(10px);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>animation: enter .55s ease-out forwards;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>@keyframes enter{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>to { transform: translateY(0); opacity: 1; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.avatar{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 124px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 124px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 38px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow:hidden;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--stroke);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.06));</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.avatar img{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width:100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height:100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>object-fit:cover;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:block;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>h1{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: -0.03em;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1.1;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.role{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.links{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 26px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:grid;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: 1fr 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* En pantallas muy estrechas: 1 columna */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 360px){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.links{ grid-template-columns: 1fr; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>gap:10px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--stroke);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: var(--btn);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-decoration:none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>line-height: 1;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>user-select:none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: transform .12s ease, background .12s ease, box-shadow .12s ease;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>will-change: transform;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn:hover{ background: var(--btnHover); transform: translateY(-1px); }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn:active{ transform: translateY(0px) scale(.99); }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn:focus-visible{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>outline:none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 0 0 4px var(--focus);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.icon{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display:inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.footer{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align:center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 12.5px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>opacity:.9;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Respeta accesibilidad: reduce motion */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (prefers-reduced-motion: reduce){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.card{ animation:none; transform:none; opacity:1; }</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.btn{ transition:none; }</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="shell"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="avatar"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Pon tu foto en avatar.jpg --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;img src="avatar.jpg" alt="Foto de Claudio Valero" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;Claudio Valero&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="role"&gt;Coordinador Editorial · Tecnología&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="links"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ✅ CAMBIA SOLO LOS href --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="btn" href="https://tudominio.com" target="_blank" rel="noopener"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M12 2a10 10 0 100 20 10 10 0 000-20Z" stroke="currentColor" stroke-width="1.8"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M2.5 12h19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M12 2c3.2 3 3.2 17 0 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M12 2c-3.2 3-3.2 17 0 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>Web</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="btn" href="https://www.facebook.com/tuusuario" target="_blank" rel="noopener"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M14 8.5V7.2c0-.9.7-1.7 1.7-1.7H18V2h-2.8A5.2 5.2 0 0010 7.2v1.3H7v3.4h3V22h4v-10h3.2l.8-3.4H14Z" fill="currentColor"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>Facebook</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="btn" href="https://x.com/tuusuario" target="_blank" rel="noopener"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M4 4h4.4l4.1 5.4L17.3 4H20l-6.1 7.5L20.6 20H16.2l-4.5-5.9L6.9 20H4l6.4-7.9L4 4Z" fill="currentColor"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>X</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="btn" href="https://www.instagram.com/tuusuario" target="_blank" rel="noopener"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M7.5 2.8h9A4.7 4.7 0 0121.2 7.5v9a4.7 4.7 0 01-4.7 4.7h-9A4.7 4.7 0 012.8 16.5v-9A4.7 4.7 0 017.5 2.8Z" stroke="currentColor" stroke-width="1.8"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M12 16.2a4.2 4.2 0 100-8.4 4.2 4.2 0 000 8.4Z" stroke="currentColor" stroke-width="1.8"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M17.7 6.3h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>Instagram</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="btn" href="https://www.tiktok.com/@tuusuario" target="_blank" rel="noopener"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M14 3v10.2a3.8 3.8 0 11-3-3.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M14 3c.9 2.7 2.8 4.6 5.5 5.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>TikTok</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="btn" href="https://www.linkedin.com/in/tuusuario" target="_blank" rel="noopener"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M6.5 9H3.8v12h2.7V9ZM5.15 3.5a1.6 1.6 0 100 3.2 1.6 1.6 0 000-3.2Z" fill="currentColor"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M10 9h2.6v1.6c.4-.9 1.5-1.9 3.4-1.9 2.8 0 4.2 1.8 4.2 5.1V21h-2.7v-6.5c0-1.9-.7-3.1-2.3-3.1-1.3 0-2 .9-2.3 1.7-.1.3-.1.7-.1 1V21H10V9Z" fill="currentColor"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>LinkedIn</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="btn" href="https://www.youtube.com/@tuusuario" target="_blank" rel="noopener"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M21 8.2a3 3 0 00-2.1-2.1C17.2 5.6 12 5.6 12 5.6s-5.2 0-6.9.5A3 3 0 003 8.2 31.7 31.7 0 003 12a31.7 31.7 0 00.1 3.8 3 3 0 002.1 2.1c1.7.5 6.9.5 6.9.5s5.2 0 6.9-.5a3 3 0 002.1-2.1A31.7 31.7 0 0021 12a31.7 31.7 0 000-3.8Z" stroke="currentColor" stroke-width="1.8"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M10.5 9.7v4.6L15 12l-4.5-2.3Z" fill="currentColor"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>YouTube</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;a class="btn" href="mailto:tucorreo@dominio.com"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M4.5 6.5h15A2 2 0 0121.5 8.5v7A2 2 0 0119.5 17.5h-15a2 2 0 01-2-2v-7a2 2 0 012-2Z" stroke="currentColor" stroke-width="1.8"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;path d="M5.5 8l6.5 5 6.5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>Email</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="footer"&gt;© &lt;span id="y"&gt;&lt;/span&gt; Claudio Valero&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById("y").textContent = new Date().getFullYear();</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+  <main class="card">
+    <div class="avatar">
+      <img src="avatar.jpg" alt="Claudio Valero">
+    </div>
+
+    <h1>Claudio Valero</h1>
+    <div class="role">Coordinador Editorial · Tecnología</div>
+
+    <section class="links">
+      <a class="btn" href="https://claudiovalero.com" target="_blank">🌐 Web</a>
+      <a class="btn" href="https://facebook.com/tuusuario" target="_blank">Facebook</a>
+      <a class="btn" href="https://x.com/tuusuario" target="_blank">X</a>
+      <a class="btn" href="https://instagram.com/tuusuario" target="_blank">Instagram</a>
+      <a class="btn" href="https://tiktok.com/@tuusuario" target="_blank">TikTok</a>
+      <a class="btn" href="https://linkedin.com/in/tuusuario" target="_blank">LinkedIn</a>
+      <a class="btn" href="https://youtube.com/@tuusuario" target="_blank">YouTube</a>
+      <a class="btn" href="mailto:tucorreo@dominio.com">Email</a>
+    </section>
+
+    <footer>
+      © 2026 Claudio Valero
+    </footer>
+  </main>
+
 </body>
 </html>
