@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- ✅ iOS: viewport-fit para safe-area -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Claudio Valero</title>
 
   <meta name="description" content="Claudio Valero · Coordinador Editorial · Tecnología">
@@ -13,6 +14,9 @@
   <meta property="og:image" content="https://claudiovalero.com/og.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- ✅ iOS: color de la barra superior en Safari -->
+  <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0f19" media="(prefers-color-scheme: dark)">
 
   <link rel="preload" as="image" href="/avatar.jpg">
   <link rel="icon" href="/favicon.ico">
@@ -34,6 +38,8 @@
 
       --btn: rgba(10,10,12,.045);
       --btnHover: rgba(10,10,12,.065);
+      /* ✅ iOS pressed */
+      --btnPressed: rgba(10,10,12,.090);
 
       --shadow: 0 26px 80px rgba(10,10,12,.12);
       --radius: 32px;
@@ -52,7 +58,14 @@
       display:flex;
       align-items:flex-start;
       justify-content:center;
-      padding: 22px;
+
+      /* ✅ iOS safe-area real */
+      padding:
+        calc(22px + env(safe-area-inset-top))
+        calc(22px + env(safe-area-inset-right))
+        calc(22px + env(safe-area-inset-bottom))
+        calc(22px + env(safe-area-inset-left));
+
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display","SF Pro Text", system-ui, sans-serif;
       color: var(--text);
       background:
@@ -62,6 +75,9 @@
         linear-gradient(180deg, var(--bgTop), var(--bgBot));
       overflow-x:hidden;
       position: relative;
+
+      /* ✅ iOS tap feel */
+      -webkit-tap-highlight-color: transparent;
     }
 
     /* noise sutil (muy Apple) */
@@ -76,7 +92,7 @@
     }
 
     .card{
-      margin-top: clamp(24px, 8vh, 72px);
+      margin-top: clamp(16px, 6vh, 64px); /* ✅ un poco más “iOS” arriba */
       width:100%;
       max-width: 420px;
       background: var(--card);
@@ -84,7 +100,6 @@
       padding: 38px 28px 26px;
       text-align:center;
 
-      /* hairline border + highlight */
       border: 0.5px solid var(--stroke);
       box-shadow: var(--shadow);
 
@@ -96,6 +111,10 @@
       animation: enter .42s var(--easeIOS) forwards;
       position: relative;
       overflow: hidden;
+
+      /* ✅ permite parallax 3D */
+      transform-style: preserve-3d;
+      will-change: transform;
     }
 
     /* Highlight superior sutil (iOS glass) */
@@ -122,9 +141,27 @@
     @keyframes enter{
       to { transform: translateY(0); opacity: 1; }
     }
+
+    /* ✅ iOS: aparición escalonada */
+    .avatar, h1, .role, .links, footer{
+      opacity:0;
+      transform: translateY(8px);
+      animation: itemIn .45s var(--easeIOS) forwards;
+    }
+    .avatar{ animation-delay: .05s; }
+    h1{ animation-delay: .10s; }
+    .role{ animation-delay: .14s; }
+    .links{ animation-delay: .18s; }
+    footer{ animation-delay: .22s; }
+
+    @keyframes itemIn{
+      to{ opacity:1; transform: translateY(0); }
+    }
+
     @media (prefers-reduced-motion: reduce){
       .card{ animation:none; transform:none; opacity:1; }
       .btn{ transition:none; }
+      .avatar, h1, .role, .links, footer{ animation:none; opacity:1; transform:none; }
     }
 
     .avatar{
@@ -134,7 +171,6 @@
       border-radius: 40px;
       overflow:hidden;
 
-      /* sin borde, con profundidad */
       box-shadow:
         0 14px 38px rgba(0,0,0,.10),
         inset 0 1px 0 rgba(255,255,255,.60);
@@ -173,7 +209,7 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      gap:12px; /* más “iOS spacing” */
+      gap:12px;
       padding: 12px 14px;
       border-radius: 18px;
       border: 0.5px solid rgba(10,10,12,.10);
@@ -186,8 +222,10 @@
 
       transition: transform .12s var(--easeIOS),
                   background .12s var(--easeIOS),
-                  box-shadow .12s var(--easeIOS);
+                  box-shadow .12s var(--easeIOS),
+                  filter .12s var(--easeIOS);
       will-change: transform;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .btn:hover{
@@ -195,10 +233,15 @@
       transform: translateY(-1px);
       box-shadow: 0 10px 24px rgba(10,10,12,.08);
     }
+
+    /* ✅ iOS pressed real: se hunde y cambia brillo */
     .btn:active{
-      transform: translateY(0) scale(.99);
-      box-shadow: 0 6px 14px rgba(10,10,12,.06);
+      background: var(--btnPressed);
+      transform: translateY(0) scale(.985);
+      box-shadow: 0 6px 14px rgba(10,10,12,.05);
+      filter: brightness(.985);
     }
+
     .btn:focus-visible{
       outline:none;
       box-shadow: 0 0 0 4px var(--focus), 0 10px 24px rgba(10,10,12,.08);
@@ -224,7 +267,7 @@
       opacity:.9;
     }
 
-    /* Pequeña mejora de contraste en modo oscuro del sistema si el usuario lo fuerza */
+    /* Dark mode */
     @media (prefers-color-scheme: dark){
       :root{
         --bgTop:#0b0f19;
@@ -237,17 +280,19 @@
         --muted: rgba(255,255,255,.66);
         --btn: rgba(255,255,255,.08);
         --btnHover: rgba(255,255,255,.12);
+        --btnPressed: rgba(255,255,255,.18);
         --shadow: 0 22px 70px rgba(0,0,0,.48);
         --focus: rgba(120,180,255,.55);
       }
       .btn{ border-color: rgba(255,255,255,.14); }
       .btn:hover{ box-shadow: 0 12px 28px rgba(0,0,0,.22); }
+      .btn:active{ box-shadow: 0 8px 18px rgba(0,0,0,.18); }
     }
   </style>
 </head>
 
 <body>
-  <main class="card">
+  <main class="card" id="card">
     <div class="avatar">
       <img src="/avatar.jpg" alt="Claudio Valero">
     </div>
@@ -324,5 +369,36 @@
 
     <footer>© 2026 Claudio Valero</footer>
   </main>
+
+  <!-- ✅ micro-parallax iOS (muy sutil). Si no hay sensores, no hace nada. -->
+  <script>
+    (function () {
+      const card = document.getElementById('card');
+      if (!card) return;
+
+      const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) return;
+
+      // Parallax ultra suave (máx 2deg). En desktop no molesta.
+      function onMove(e){
+        const g = e.gamma ?? 0; // left-right
+        const b = e.beta ?? 0;  // front-back
+        const rx = Math.max(-2, Math.min(2, (b - 15) / 45 * 2));
+        const ry = Math.max(-2, Math.min(2, g / 45 * 2));
+        card.style.transform = `translateY(0) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      }
+
+      window.addEventListener('deviceorientation', onMove, { passive:true });
+
+      // Fallback desktop: tiny parallax with mouse (optional but subtle)
+      window.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 2;
+        const y = (e.clientY / window.innerHeight - 0.5) * 2;
+        const rx = Math.max(-1.2, Math.min(1.2, -y * 1.2));
+        const ry = Math.max(-1.2, Math.min(1.2, x * 1.2));
+        card.style.transform = `translateY(0) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      }, { passive:true });
+    })();
+  </script>
 </body>
 </html>
