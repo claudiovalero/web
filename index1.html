@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Claudio Valero</title>
+  <meta name="description" content="Claudio Valero · Coordinador Editorial · Tecnología">
+  <meta property="og:title" content="Claudio Valero">
+  <meta property="og:description" content="Coordinador Editorial · Tecnología">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://claudiovalero.com">
+  <meta property="og:image" content="https://claudiovalero.com/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f2f3f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0f19" media="(prefers-color-scheme: dark)">
+  <link rel="preload" as="image" href="/avatar.jpg">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <style>
+    :root {
+      --bgTop: #f2f3f7;
+      --bgBot: #ffffff;
+      --card: rgba(255,255,255,.76);
+      --stroke: rgba(10,10,12,.09);
+      --text: rgba(10,10,12,.92);
+      --muted: rgba(10,10,12,.50);
+      --btn: rgba(10,10,12,.042);
+      --btnHover: rgba(10,10,12,.068);
+      --btnPressed: rgba(10,10,12,.095);
+      --btnPrimary: rgba(0,120,255,1);
+      --btnPrimaryText: #fff;
+      --shadow: 0 32px 90px rgba(10,10,12,.13);
+      --shadowBtn: 0 2px 8px rgba(10,10,12,.07);
+      --radius: 34px;
+      --radiusBtn: 16px;
+      --ease: cubic-bezier(0.22,1,0.36,1);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bgTop: #0b0f19;
+        --bgBot: #111520;
+        --card: rgba(255,255,255,.065);
+        --stroke: rgba(255,255,255,.10);
+        --text: rgba(255,255,255,.92);
+        --muted: rgba(255,255,255,.46);
+        --btn: rgba(255,255,255,.07);
+        --btnHover: rgba(255,255,255,.11);
+        --btnPressed: rgba(255,255,255,.15);
+        --shadow: 0 32px 90px rgba(0,0,0,.45);
+        --shadowBtn: 0 2px 8px rgba(0,0,0,.25);
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding:
+        calc(24px + env(safe-area-inset-top))
+        calc(24px + env(safe-area-inset-right))
+        calc(24px + env(safe-area-inset-bottom))
+        calc(24px + env(safe-area-inset-left));
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+      color: var(--text);
+      -webkit-tap-highlight-color: transparent;
+      background:
+        radial-gradient(900px 600px at 18% 12%, rgba(0,122,255,.18), transparent 55%),
+        radial-gradient(750px 520px at 86% 22%, rgba(175,82,222,.14), transparent 60%),
+        radial-gradient(700px 500px at 60% 90%, rgba(52,199,89,.09), transparent 55%),
+        linear-gradient(180deg, var(--bgTop), var(--bgBot));
+    }
+    .card-wrapper { perspective: 900px; }
+    .card {
+      width: 100%;
+      max-width: 400px;
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 40px 28px 36px;
+      text-align: center;
+      border: 0.5px solid var(--stroke);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px) saturate(160%);
+      -webkit-backdrop-filter: blur(20px) saturate(160%);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(10px) scale(.99);
+      animation: cardEnter .5s var(--ease) forwards;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(158deg, rgba(255,255,255,.22) 0%, rgba(255,255,255,.04) 40%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    @keyframes cardEnter {
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .tilt {
+      will-change: transform;
+      transform-style: preserve-3d;
+      transition: transform .08s linear;
+      position: relative;
+      z-index: 1;
+    }
+    .avatar, h1, .role, .primary-btn, .links, footer {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: itemEnter .45s var(--ease) forwards;
+    }
+    .avatar      { animation-delay: .08s; }
+    h1           { animation-delay: .13s; }
+    .role        { animation-delay: .17s; }
+    .primary-btn { animation-delay: .21s; }
+    .links       { animation-delay: .25s; }
+    footer       { animation-delay: .29s; }
+    @keyframes itemEnter {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .avatar {
+      width: 112px;
+      height: 112px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 0 0 3px var(--card), 0 0 0 4px var(--stroke), 0 14px 36px rgba(0,0,0,.12);
+      background: rgba(120,120,128,.18);
+    }
+    .avatar img { width: 100%; height: 100%; object-fit: cover; }
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -.04em;
+    }
+    .role {
+      margin-top: 6px;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: -.01em;
+    }
+    .primary-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 24px;
+      padding: 14px 20px;
+      border-radius: var(--radiusBtn);
+      border: none;
+      background: var(--btnPrimary);
+      color: var(--btnPrimaryText);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -.02em;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,120,255,.35);
+      transition: .12s var(--ease);
+    }
+    .primary-btn:hover  { transform: translateY(-1px); filter: brightness(1.08); }
+    .primary-btn:active { transform: scale(.982); filter: brightness(.95); }
+    .primary-btn:focus-visible { outline: 3px solid rgba(0,120,255,.45); outline-offset: 3px; }
+    .links {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 10px;
+      border-radius: var(--radiusBtn);
+      border: 0.5px solid var(--stroke);
+      background: var(--btn);
+      box-shadow: var(--shadowBtn);
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: -.015em;
+      transition: .12s var(--ease);
+    }
+    .btn:hover  { background: var(--btnHover); transform: translateY(-1px); }
+    .btn:active { background: var(--btnPressed); transform: scale(.982); filter: brightness(.97); }
+    .btn:focus-visible { outline: 2px solid rgba(0,120,255,.55); outline-offset: 2px; }
+    footer {
+      margin-top: 18px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: .01em;
+    }
+  </style>
+</head>
+<body>
+<div class="card-wrapper">
+  <main class="card">
+    <div class="tilt" id="tilt">
+      <div class="avatar">
+        <img src="/avatar.jpg" alt="Claudio Valero">
+      </div>
+      <h1>Claudio Valero</h1>
+      <div class="role">Coordinador Editorial · Tecnología</div>
+      <a class="primary-btn" href="https://claudiovalero.com">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/>
+        </svg>
+        claudiovalero.com
+      </a>
+      <section class="links" aria-label="Redes sociales">
+        <a class="btn" href="https://x.com/claudio_valero" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.747l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X
+        </a>
+        <a class="btn" href="https://www.instagram.com/claudiovalero/" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+          Instagram
+        </a>
+        <a class="btn" href="https://www.tiktok.com/@claudio_valero" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z"/></svg>
+          TikTok
+        </a>
+        <a class="btn" href="https://www.youtube.com/@ClaudioValero" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/claudiovalero/" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn" href="https://www.facebook.com/claudiovalero" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook
+        </a>
+        <a class="btn" href="mailto:claudiovm@gmail.com" style="grid-column: span 2;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          claudiovm@gmail.com
+        </a>
+      </section>
+      <footer>© 2026 Claudio Valero</footer>
+    </div>
+  </main>
+</div>
+<script>
+  const tilt = document.getElementById('tilt');
+  const isTouch = window.matchMedia('(hover: none)').matches;
+  if (!isTouch) {
+    window.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth  - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+      tilt.style.transition = 'transform .08s linear';
+      tilt.style.transform  = `rotateX(${-y * 3}deg) rotateY(${x * 3}deg)`;
+    });
+    window.addEventListener('mouseleave', () => {
+      tilt.style.transition = 'transform .6s cubic-bezier(0.22,1,0.36,1)';
+      tilt.style.transform  = 'rotateX(0deg) rotateY(0deg)';
+    });
+  }
+</script>
+</body>
+</html>
