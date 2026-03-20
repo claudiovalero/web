@@ -90,11 +90,14 @@
     }
 
     /* ── Card ─────────────────────────────────────────────────────── */
-    .card-wrapper { perspective: 900px; }
+    .card-wrapper {
+      perspective: 900px;
+      width: 100%;
+      max-width: 480px;
+    }
 
     .card {
       width: 100%;
-      max-width: 480px;
       background: var(--card);
       border-radius: var(--radius);
       padding: 40px 28px 36px;
@@ -107,7 +110,7 @@
       -webkit-backdrop-filter: blur(20px) saturate(160%);
 
       position: relative;
-      overflow: hidden;
+      /* overflow:hidden eliminado — causa puntos en iOS Safari con backdrop-filter */
 
       opacity: 0;
       transform: translateY(10px) scale(.99);
